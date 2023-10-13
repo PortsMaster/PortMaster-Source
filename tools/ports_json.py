@@ -790,9 +790,6 @@ def main(args):
     warnings = False
     errors = False
     for port_name in sorted(all_ports, key=lambda port_name: port_name.lower()):
-        if extra_info[port_name].get('status', None) == "unchanged" and not extra_info[port_name].get('no_port_json', False):
-            continue
-
         if len(extra_info[port_name]['errors']) > 0:
             print(f"::error file={port_name}::Bad port {port_name}")
 
@@ -812,8 +809,8 @@ def main(args):
     if errors:
         return 255
 
-    elif warnings:
-        return 127
+    # elif warnings:
+    #     return 127
 
     ports_json_output = {
         "ports": {},

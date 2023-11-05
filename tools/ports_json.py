@@ -80,6 +80,7 @@ PORT_INFO_ATTR_ATTRS = {
     'porter': [],
     'image': None,
     'rtr': False,
+    'exp': False,
     'runtime': None,
     'reqs': [],
     }
